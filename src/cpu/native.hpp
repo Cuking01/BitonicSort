@@ -2,7 +2,7 @@
 
 #include<algorithm>
 #include<concepts>
-#include<stdint.h>
+#include<cstdint>
 
 struct Inc
 {
@@ -47,8 +47,8 @@ void bitonic_sort_native(int*arr,uint64_t len)
 	if(len==1)return;
 
 	len>>=1;
-	bitonic_sort_native<Inc>(arr,len);
-	bitonic_sort_native<Dec>(arr+len,len);
+	bitonic_sort_native<Dec>(arr,len);
+	bitonic_sort_native<Inc>(arr+len,len);
 	divide<Order>(arr,len<<1);
 }
 
